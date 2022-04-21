@@ -149,7 +149,7 @@ class Employee(Person):
         mycursor = cont.cursor()
         mycursor.execute(
             "DELETE FROM employee WHERE id = " + str(id))
-        mycursor.execute("commit")
+        cont.commit()
         return 'employee fired'
 
 
@@ -178,12 +178,14 @@ class Office(Employee):
         myresult = mycursor.fetchall()
         return myresult
 
-    def hire_employee(self, employee):
+    def hire_employee(self, employee, offce_id):
         # hire employee
         cont = connectToDB()
         mycursor = cont.cursor()
         mycursor.execute(
-            "INSERT INTO employee(email, workmood, salary, is_manager, office_id) VALUES ('" + employee.email + "','" + employee.workmood + "','" + str(employee.salary) + "','" + str(employee.is_manager) + "','" + str(self.id) + "')")
+            "INSERT INTO employee(email, workmood, salary, is_manager, office_id) VALUES ('" + employee.email + "','" + employee.workmood + "','" + str(employee.salary) + "','" + str(employee.is_manager) + "','" + str(offce_id) + "')")
+        cont.commit()
+        cont.close()
 
     @classmethod
     def get_all_offices(cls):
@@ -264,6 +266,7 @@ def dummy_display_lines():
     print("4 to Display All Employees")
     print("5 to Display All Offices")
     print("6 to Display Specific Employee")
+    print("7 to Hire Employee into an office")
     print("q to Exit")
 
 
@@ -298,6 +301,36 @@ def new_employee():
         employee = Employee(email, workmood, int(
             salary), is_manager, office_id)
         employee.add_employee()
+        print('Employee added')
+
+
+def hire_employee():
+    if(check_Employee()):
+        print('Employee already exists')
+        return
+    else:
+        email = input("Enter Employee Email : ")
+        if(check(email)) == False:
+            print('invalid email')
+            return
+        workmood = input("Enter Employee Workmood : ")
+        salary = input("Enter Employee Salary : ")
+        if(int(salary) < 1000):
+            print('salary is too low, it must be 1000 or more')
+            return
+        is_manager = input("Is he/she Manager?, Please answer with 0/1 : ")
+        office_id = input("Enter Employee Office Id : ")
+        if(check_office_id(office_id) == True):
+            print('Office Id is not valid')
+            return
+        office_name = input("Enter Employee Office Name : ")
+        if(check_office_name(office_name) == True):
+            print('Office Name is not valid')
+            return
+        employee = Employee(email, workmood, int(
+            salary), is_manager, office_id)
+        office = Office(office_name)
+        office.hire_employee(employee, office_id)
         print('Employee added')
 
 
@@ -385,6 +418,8 @@ def menu():
             display_all_offices()
         elif(ch == '6'):
             display_specific_employee()
+        elif(ch == '7'):
+            hire_employee()
         else:
             print("Invalid Choice")
         dummy_display_lines()
