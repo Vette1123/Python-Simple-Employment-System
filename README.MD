@@ -18,3 +18,29 @@
 <a href="https://mariadb.org/" title="MariaDB"><img src="icons/mariadb.png" /></a>
 <a href="https://code.visualstudio.com/" title="Visual Studio Code"><img src="icons/vscode.png" /></a>
 <a href="https://www.jetbrains.com/phpstorm/" title="PHPStorm"><img src="icons/phpstorm.png" /></a>
+
+**Learning:**
+
+<a href="https://golang.org/" title="Golang"><img src="icons/golang.png" /></a>
+<a href="https://www.rust-lang.org/" title="Rust"><img src="icons/rust.png" /></a>
+<a href="https://dart.dev/" title="Dart"><img src="icons/dartlang.png" /></a>
+<a href="https://flutter.dev/" title="Flutter"><img src="icons/flutter.png" /></a>
+
+**Previously worked with:**
+
+<a href="https://dotnet.microsoft.com/" title="dotNet"><img src="icons/dotnet.png" /></a>
+<a href="http://csharp.net/" title="C#"><img src="icons/csharp.png" /></a>
+<a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/" title="Visual Basic"><img src="icons/vbnet.png" /></a>
+<a href="https://angular.io/" title="Angular"><img src="icons/angular.png" /></a>
+<a href="https://reactjs.org/" title="React"><img src="icons/react.png" /></a>
+<a href="https://laravel.com/" title="Laravel"><img src="icons/laravel.png" /></a>
+<a href="https://wordpress.org/" title="WordPress"><img src="icons/wordpress.png" /></a>
+<a href="https://www.vagrantup.com/" title="Vagrant"><img src="icons/vagrant.png" /></a>
+
+**Currently focused on building:**
+
+- [axl-template](https://github.com/axelerant/axl-template)
+- [db-docker](https://github.com/axelerant/db-docker)
+- [drupalqa](https://github.com/hussainweb/drupalqa)
+
+[How did I build this?](https://youtu.be/UqNbBe3lVCI)
